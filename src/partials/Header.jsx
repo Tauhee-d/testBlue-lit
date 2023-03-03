@@ -50,7 +50,9 @@ function Header() {
           <nav className="hidden md:flex md:grow">
 
 {/* Desktop sign in links */}
+
 <ul className="flex grow justify-end flex-wrap items-center">
+  
   <li>
     <Link to="/" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</Link>
   </li>
@@ -132,21 +134,85 @@ function Header() {
 
 
 
-
+  
 
 
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
 
+
+        
+
+
+
+         
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
+            <Dropdown style={{  textDecoration:'none'}} title="Services" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+     {/* 2nd level: hover */}
+     <li>
+       <Link to="/staffAugmentation" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Staff Augmentation</Link>
+     </li>
+     <li>
+       <Link to="/offeringsAndApporach" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Offerings And Apporach</Link>
+     </li>
+     <li>   
+          <Link to="/development" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Development</Link>
+     </li>
+   </Dropdown>
+   <Dropdown title="AboutUs" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+     {/* 2nd level: hover */}
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Why Us?</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"> How can we help us?</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Investor Relation</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Alliances and Partners</Link>
+     </li>
+   </Dropdown>
+   <Dropdown title="Career" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+     {/* 2nd level: hover */}
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Career Overview</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"> Current Openings</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Employee Benifits</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Joins Us</Link>
+     </li>
+     <li>
+       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Employee Benifits</Link>
+     </li>
+   </Dropdown>
+
+
+   <li>
+           <Link to="/contact" className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2">Contact us</Link>
+         </li>
+             
+             
+              {/* <li>
+                <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
+              </li>
               <li>
+                <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
+              </li> */}
+              {/* <li>
                 <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
               <li>
                 <Link to="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">Sign up</Link>
-              </li>
+              </li> */}
             </ul>
 
           </nav>
@@ -180,8 +246,32 @@ function Header() {
 
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+     
     </header>
   );
 }
 
 export default Header;
+
+
+
+
+
+
+
+
+
+
+

@@ -18,6 +18,7 @@ import Service from './pages/Service';
 import Offerings from './pages/Offerings';
 import Development from './pages/Development';
 import Staff from './pages/Staff';
+import ContactUs from './partials/ContactUs';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/offeringsAndApporach" element={<Offerings />} />
         <Route path="/development" element={<Development />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </>
   );
