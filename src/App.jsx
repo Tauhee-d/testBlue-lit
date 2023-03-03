@@ -18,7 +18,10 @@ import Service from './pages/Service';
 import Offerings from './pages/Offerings';
 import Development from './pages/Development';
 import Staff from './pages/Staff';
-import ContactUs from './partials/ContactUs';
+import Openings from './pages/Openings';
+import AboutUsBlock from './partials/AboutUsBlocks ';
+import About from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 function App() {
 
@@ -50,6 +53,8 @@ function App() {
         <Route path="/offeringsAndApporach" element={<Offerings />} />
         <Route path="/development" element={<Development />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/openings" element={<Openings />} />
+        <Route path="/aboutUs" element={<About />} />
       </Routes>
     </>
   );

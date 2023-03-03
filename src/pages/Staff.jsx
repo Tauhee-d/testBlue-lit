@@ -7,7 +7,6 @@ import FeaturesBlocks from '../partials/FeaturesBlocks';
 import FeaturesZigZag from '../partials/FeaturesZigzag';
 import Testimonials from '../partials/Testimonials';
 import Newsletter from '../partials/Newsletter';
-import Banner from '../partials/Banner';
 import Footer from '../partials/Footer';
 import OfferingBlocks from '../partials/OfferingBlocks';
 import StaffBlock from '../partials/Staff';
@@ -34,7 +33,7 @@ function Staff() {
         {/* <Newsletter /> */}
       </main>
 
-      <Banner />
+    
 
       {/*  Site footer */}
       <Footer />

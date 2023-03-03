@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Dropdown from '../utils/Dropdown';
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "../utils/Dropdown";
+import logo from "../../src/images/bluelit.png";
 
 function Header() {
-
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const trigger = useRef(null);
@@ -13,11 +13,16 @@ function Header() {
   useEffect(() => {
     const clickHandler = ({ target }) => {
       if (!mobileNav.current || !trigger.current) return;
-      if (!mobileNavOpen || mobileNav.current.contains(target) || trigger.current.contains(target)) return;
+      if (
+        !mobileNavOpen ||
+        mobileNav.current.contains(target) ||
+        trigger.current.contains(target)
+      )
+        return;
       setMobileNavOpen(false);
     };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
   });
 
   // close the mobile menu if the esc key is pressed
@@ -26,47 +31,52 @@ function Header() {
       if (!mobileNavOpen || keyCode !== 27) return;
       setMobileNavOpen(false);
     };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
   });
 
   return (
     <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
-
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
             <Link to="/" className="block" aria-label="Cruip">
-              <svg className="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
+              <svg
+                className="w-14 h-15 fill-current text-purple-600"
+                viewBox="0 0 32 32"
+
+                // xmlns="http://www.w3.org/2000/svg"
+                xlinkHref={logo}
+              >
+                <image xlinkHref={logo} width="37" height="40" />
+                {/* <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" /> */}
               </svg>
+              {/* <svg>
+                <image xlinkHref={logo} width="100" height="100" />
+              </svg> */}
             </Link>
           </div>
 
-
           <div>
-          <nav className="hidden md:flex md:grow">
+            <nav className="hidden md:flex md:grow">
+              {/* Desktop sign in links */}
 
-{/* Desktop sign in links */}
-
-<ul className="flex grow justify-end flex-wrap items-center">
-  
-  <li>
-    <Link to="/" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</Link>
-  </li>
- 
-</ul>
-
-</nav>
+              <ul className="flex grow justify-end flex-wrap items-center">
+                <li>
+                  <Link
+                    to="/"
+                    className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  >
+                    Home
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
-
-
-
-
-      {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"><span class="navbar-toggler-icon"><span class="ti ti-align-justify"></span></span></button>
+          {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"><span class="navbar-toggler-icon"><span class="ti ti-align-justify"></span></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">      
         <ul class="navbar-nav animated remove-animation fadeInDown" data-animate="fadeInDown" data-delay=".9" style="visibility: visible; animation-delay: 0.9s;">
           <li class="nav-item"><a class="nav-link menu-link" href="index.html">Home<span class="sr-only">(current)</span></a></li>
@@ -132,75 +142,61 @@ function Header() {
         </ul>
       </div> */}
 
-
-
-  
-
-
-
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
-
-
-        
-
-
-
-         
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-            <Dropdown style={{  textDecoration:'none'}} title="Services" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
-     {/* 2nd level: hover */}
-     <li>
-       <Link to="/staffAugmentation" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Staff Augmentation</Link>
-     </li>
-     <li>
-       <Link to="/offeringsAndApporach" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Offerings And Apporach</Link>
-     </li>
-     <li>   
-          <Link to="/development" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Development</Link>
-     </li>
-   </Dropdown>
-   <Dropdown title="AboutUs" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
-     {/* 2nd level: hover */}
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Why Us?</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"> How can we help us?</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Investor Relation</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Alliances and Partners</Link>
-     </li>
-   </Dropdown>
-   <Dropdown title="Career" className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out">
-     {/* 2nd level: hover */}
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Career Overview</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"> Current Openings</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Employee Benifits</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Joins Us</Link>
-     </li>
-     <li>
-       <Link to="/#" className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight">Employee Benifits</Link>
-     </li>
-   </Dropdown>
+              <li>
+                <Link
+                  to="/aboutUs"
+                  className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2"
+                >
+                  About us
+                </Link>
+              </li>
 
+              <Dropdown
+                title="Career"
+                className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out"
+              >
+                {/* 2nd level: hover */}
+                <li></li>
+                <li>
+                  <Link
+                    to="/openings"
+                    className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"
+                  >
+                    {" "}
+                    Current Openings
+                  </Link>
+                </li>
+              </Dropdown>
 
-   <li>
-           <Link to="/contact" className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2">Contact us</Link>
-         </li>
-             
-             
+              <Dropdown
+                style={{ textDecoration: "none" }}
+                title="Services"
+                className="text-black hover:text-purple-600 px-4 py-2 flex items-center transition duration-150 ease-in-out"
+              >
+                {/* 2nd level: hover */}
+                <li>
+                  <Link
+                    to="/staffAugmentation"
+                    className="font-medium text-sm text-white hover:text-purple-600 flex py-2 px-4 leading-tight"
+                  >
+                    Staff Augmentation
+                  </Link>
+                </li>
+              </Dropdown>
+
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2"
+                >
+                  Contact us
+                </Link>
+              </li>
+
               {/* <li>
                 <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
@@ -214,16 +210,24 @@ function Header() {
                 <Link to="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">Sign up</Link>
               </li> */}
             </ul>
-
           </nav>
 
           {/* Mobile menu */}
           <div className="md:hidden">
-
             {/* Hamburger button */}
-            <button ref={trigger} className={`hamburger ${mobileNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={mobileNavOpen} onClick={() => setMobileNavOpen(!mobileNavOpen)}>
+            <button
+              ref={trigger}
+              className={`hamburger ${mobileNavOpen && "active"}`}
+              aria-controls="mobile-nav"
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            >
               <span className="sr-only">Menu</span>
-              <svg className="w-6 h-6 fill-current text-gray-300 hover:text-gray-200 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="w-6 h-6 fill-current text-gray-300 hover:text-gray-200 transition duration-150 ease-in-out"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <rect y="4" width="24" height="2" rx="1" />
                 <rect y="11" width="24" height="2" rx="1" />
                 <rect y="18" width="24" height="2" rx="1" />
@@ -231,47 +235,91 @@ function Header() {
             </button>
 
             {/*Mobile navigation */}
-            <nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 } }>
+            <nav
+              id="mobile-nav"
+              ref={mobileNav}
+              className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
+              style={
+                mobileNavOpen
+                  ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 }
+                  : { maxHeight: 0, opacity: 0.8 }
+              }
+            >
               <ul className="bg-gray-800 px-4 py-2">
                 <li>
-                  <Link to="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Sign in</Link>
+                  <Link
+                    to="/#0"
+                    className="flex text-gray-300 hover:text-gray-200 py-2"
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/signup" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">Sign up</Link>
+                  <Link
+                    to="/aboutUs"
+                    className="flex text-gray-300 hover:text-gray-200 py-2"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li className="py-2 my-2 border-t border-b border-gray-700">
+                  <span className="flex text-gray-300 py-2">Careers</span>
+                  <ul className="pl-4">
+                    <li>
+                      <Link
+                        to="/openings"
+                        className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2"
+                      >
+                        Current Openings
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="py-2 my-2 border-t border-b border-gray-700">
+                  <span className="flex text-gray-300 py-2">Services</span>
+                  <ul className="pl-4">
+                    <li>
+                      <Link
+                        to="/staffAugmentation"
+                        className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2"
+                      >
+                        staffAugmentation
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="flex text-gray-300 hover:text-gray-200 py-2"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/signin"
+                    className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center"
+                  >
+                    Sign in
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
+                  >
+                    Sign up
+                  </Link>
                 </li>
               </ul>
             </nav>
-
           </div>
-
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-     
     </header>
   );
 }
 
 export default Header;
-
-
-
-
-
-
-
-
-
-
-
