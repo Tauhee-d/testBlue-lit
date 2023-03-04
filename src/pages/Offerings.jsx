@@ -26,7 +26,9 @@ function Offerings() {
 
         {/*  Page sections */}
         {/* <HeroHome /> */}
+        <div style={{marginTop:'30px'}}>
         <OfferingBlocks/>
+          </div>
         {/* <FeaturesBlocks /> */}
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}

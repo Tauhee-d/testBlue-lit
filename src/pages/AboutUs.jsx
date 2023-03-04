@@ -19,7 +19,13 @@ function About() {
 
         {/*  Page sections */}
         {/* <HeroHome /> */}
+        <div style={{marginTop:'30px'}}>
         <AboutUsBlock/>
+
+          </div>
+
+
+
         {/* <FeaturesBlocks /> */}
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}

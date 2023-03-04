@@ -20,7 +20,10 @@ function Openings() {
 
         {/*  Page sections */}
         {/* <HeroHome /> */}
+        <div style={{marginTop:'30px'}}>
+
         <OpeningBlocks/>
+        </div>
         {/* <FeaturesBlocks /> */}
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}

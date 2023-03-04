@@ -24,7 +24,9 @@ function Home() {
 
         {/*  Page sections */}
         <HeroHome />
+        <div style={{marginTop:'30px'}}>
         <FeaturesBlocks />
+          </div>
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}
         {/* <Newsletter /> */}

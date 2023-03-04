@@ -20,7 +20,9 @@ function ContactUs() {
 
         {/*  Page sections */}
         {/* <HeroHome /> */}
+        <div style={{marginTop:'30px'}}>
         <ContactUsBlock/>
+          </div>
         {/* <FeaturesBlocks /> */}
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}

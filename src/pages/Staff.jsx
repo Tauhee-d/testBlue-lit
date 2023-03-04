@@ -26,7 +26,9 @@ function Staff() {
 
         {/*  Page sections */}
         {/* <HeroHome /> */}
+        <div style={{marginTop:'30px'}}>
         <StaffBlock/>
+          </div>
         {/* <FeaturesBlocks /> */}
         {/* <FeaturesZigZag /> */}
         {/* <Testimonials /> */}
